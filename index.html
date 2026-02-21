@@ -6,15 +6,55 @@
     <title>ToDo Lists - Marissa</title>
 
     <link rel="stylesheet" href="css\style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
 <body>
-    <header></header>
+    <div id="display-container" style="margin-top: 20px; border: 1px solid #ccc; padding: 10px; border-radius: 5px; background-color: #f9f9f9;">
+        <header>
+        <h1 class="text-4xl font-bold text-center text-blue-500 p-3">My To-Do List</h1>
+    </header>
 
-    <main></main>
+    <main>
+        <section>
+            <form>
+                <input class="border bg-white p-1 rounded" type="text" id="todo-input" placeholder="Add your new task here">
+                <input class="border bg-white p-1 rounded" type="date" id="todo-date" placeholder="Enter due date">
+            </form>    
+
+            <button class="bg-blue-500 hover:bg-blue-800 text-white font-bold py-1 px-2 rounded" onclick="addTodo()"
+                type="button">Submit
+            </button>
+        </section>
+
+       
+        <section class="flex pt-2 justify-between">
+            <button class="font-bold p-1 bg-yellow-500 hover:bg-yellow-800 text-white rounded" onclick="filterTasks()">Filter Task</button>
+                    </section>
+
+        <section class="pt-2">
+            <header>
+                <h1 class="text-2xl font-semibold text-blue-500">List of To-Dos</h1>
+            </header>
+
+            <div id="display-container" style=" background-color: #f0f0f0; margin-top: 5px; border: 2px solid #ccc; padding: 10px;">
+                <ul id="todo-list"></ul>
+            </div>
+        </section>
+
+        <section class="flex pt-2 justify-between">
+            <button class="font-bold p-1 bg-red-500 hover:bg-red-800 text-white hover:text-black rounded" onclick="clearAll()">Clear All</button>
+            <button class="font-bold p-1 bg-green-500 hover:bg-green-800 text-white rounded" onclick="markAllComplete()">Mark All Complete</button>
+        </section>
+    </main>
+    </div>
+    
 
     
-    <footer></footer>
+    <footer>
+        <p class="text-center text-gray-200 text-sm mt-4">© 2026 My Todo List App. by MarissaZ.</p>
+    </footer>
 
     <script src="js/script.js"></script>
 </body>
